@@ -11,6 +11,8 @@ project <- snakemake@params[["project"]]
 cores <- as.numeric(snakemake@threads) 
 
 #load libraries
+# Loading QDNAseq.mm10 first and then QDNAseqmod will supersede QDNAseq functions?
+suppressMessages(library(QDNAseq.mm10))
 suppressPackageStartupMessages(library(QDNAseqmod))
 suppressPackageStartupMessages(library(Biobase))
 suppressPackageStartupMessages(library(ggplot2))
@@ -29,7 +31,7 @@ rds.pdata <- pData(rds.obj[[1]])
 
 #set parameters for fixed bin size
 bin_size <- bin*1000
-bins<-getBinAnnotations(binSize = bin)
+bins<-getBinAnnotations(binSize = bin, genome="mm10", type="SR50")
 nbins_ref_genome <- sum(fData(rds.obj[[1]])$use)
 nbins<-nrow(bins)
 
@@ -108,7 +110,9 @@ cntodepth<-function(cn,purity,seqdepth) #converts copy number to read depth give
     seqdepth*((1-purity)*2+purity*cn)
 }
 ## TP53 target bin
-target <- c("17:7565097-7590863")
+# target <- c("17:7565097-7590863")
+# Change for mm10 reference (from genome.cse.ucsc.edu):
+target <- c("11:69580359-69591872")
 get_gene_seg <- function(target=NULL,abs_data=NULL){
   to_use <- fData(abs_data)$use
   cn_obj <- abs_data[to_use,]

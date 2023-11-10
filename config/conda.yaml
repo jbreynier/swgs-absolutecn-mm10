@@ -17,4 +17,5 @@ dependencies:
   - r-foreach=1.5.0
   - bioconductor-qdnaseq
   - bioconductor-qdnaseq.hg19
+  - bioconductor-qdnaseq.mm10
   - r-remotes

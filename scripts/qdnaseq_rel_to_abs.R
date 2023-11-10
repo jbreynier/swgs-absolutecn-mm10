@@ -34,7 +34,9 @@ collapse_rds <- function(rds.list){
 }
 
 ## TP53 target bin
-target <- c("17:7565097-7590863")
+# target <- c("17:7565097-7590863")
+# Change for mm10 reference (from genome.cse.ucsc.edu):
+target <- c("11:69580359-69591872")
 get_gene_seg <- function(target=NULL,abs_data=NULL){
   to_use <- fData(abs_data)$use
   cn_obj <- abs_data[to_use,]

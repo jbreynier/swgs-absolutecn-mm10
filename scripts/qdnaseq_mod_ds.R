@@ -14,6 +14,8 @@ outname <- snakemake@output[[1]]
 suppressMessages(library(parallel))
 suppressMessages(library(tidyverse))
 suppressMessages(library(Biobase))
+# Loading QDNAseq.mm10 first and then QDNAseqmod will supersede QDNAseq functions?
+suppressMessages(library(QDNAseq.mm10))
 suppressMessages(library(QDNAseqmod))
 suppressMessages(library(plyr))
 
@@ -22,7 +24,7 @@ metadata <- metadata[metadata$use == "TRUE",]
 sampleIds <- unique(metadata$SAMPLE_ID)
 
 ## generate annotation file either by preloading calculated files or generating new one
-bins <- getBinAnnotations(binSize=bin.size)
+bins <- getBinAnnotations(binSize=bin.size, genome="mm10", type="SR50")
 
 # Samples to smooth
 smoothed_samples <- as.character(metadata$SAMPLE_ID[metadata$smooth == "TRUE"])
