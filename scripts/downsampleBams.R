@@ -11,7 +11,7 @@ project <- snakemake@params[["project"]]
 outname <- snakemake@output[[1]]
 sample_name <- snakemake@params[["sample"]]
 
-fit.qc <- read.table(file = meta,header = T,sep = "\t",na.strings = "")
+fit.qc <- read.table(file = meta,header = T,sep = "\t",na.strings = "", quote="", fill=FALSE)
 
 relative_smoothed <- readRDS(rds)
 read.data <- phenoData(relative_smoothed)@data
