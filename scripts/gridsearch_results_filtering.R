@@ -10,7 +10,7 @@ args = commandArgs(trailingOnly=TRUE)
 print(snakemake)
 
 metafile <- snakemake@params[["meta"]]
-metadata <- read.table(file = metafile,header=T,sep="\t")
+metadata <- read.table(file = metafile,header=T,sep="\t", quote="", fill=FALSE)
 bin <- as.numeric(snakemake@params[["bin"]])
 out_dir <- snakemake@params[["outdir"]]
 project <- snakemake@params[["project"]]

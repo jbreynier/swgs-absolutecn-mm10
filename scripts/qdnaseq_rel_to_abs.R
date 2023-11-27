@@ -9,7 +9,7 @@ library(stringr)
 suppressWarnings(library(doMC))
 suppressWarnings(library(foreach))
 
-qc.data <- read.table(snakemake@input[["meta"]],header = T,sep = "\t")
+qc.data <- read.table(snakemake@input[["meta"]],header = T,sep = "\t", quote="", fill=FALSE)
 output_dir <- snakemake@params[["outdir"]]
 bin <- as.numeric(snakemake@params[["bin"]])
 project <- snakemake@params[["project"]]

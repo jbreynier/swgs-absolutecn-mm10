@@ -7,7 +7,7 @@ ncores <- 1
 output_dir <- snakemake@params[["outdir"]]
 project <- snakemake@params[["project"]]
 metafile <- snakemake@input[["meta"]]
-metadata <- read.table(file = metafile,header=T,sep="\t")
+metadata <- read.table(file = metafile,header=T,sep="\t", quote="", fill=FALSE)
 bam_list <- snakemake@input[["bam"]]
 outname <- snakemake@output[[1]]
 
