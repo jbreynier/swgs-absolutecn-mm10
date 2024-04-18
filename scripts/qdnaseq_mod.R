@@ -30,7 +30,7 @@ readCounts <- mclapply(X=bam_list, FUN=binReadCounts, bins=bins, mc.cores=ncores
 ## if copyNumbersSegment file exists read it else generate it
 # apply filter based on loess fit residuals and encode/1000-genome balcklist
 
-readCountsFiltered <- mclapply(X=readCounts, FUN=applyFilters, mc.cores=1)
+readCountsFiltered <- mclapply(X=readCounts, FUN=applyFilters, mc.cores=1, MoreArgs=list(chromosomes=c("Y", "MT")))
 
 # estimate correction for GC content and mappability
 readCountsFiltered <- mclapply(X=readCountsFiltered, FUN=estimateCorrection, mc.cores=1)
