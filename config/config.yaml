@@ -1,18 +1,18 @@
 ---
 # Sample sheet
-samplesheet: "sample_sheet.tsv"
+samplesheet: "organoid_sample_sheet.tsv"
 
 # Output location
-out_dir: "/mnt/scratcha/fmlab/smith10/britroc/"
+out_dir: "/pmglocal/jfr2137/temp/absolutecn_output/"
 
 # Bin sizes
 # By default any in [1,5,15,30,50,100,500,1000]
 bins:
 - 30
-project_name: "britroc"
+project_name: "su2c_organoids"
 
 # Pipeline parameters
-af_cutoff: 0.15
+purity_cutoff: 0.15
 
 # Not implemented
 #custom_bin: false

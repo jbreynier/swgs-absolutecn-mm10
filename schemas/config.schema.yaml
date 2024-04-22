@@ -14,7 +14,7 @@ properties:
     type: array
   project_name:
     type: string
-  af_cutoff:
+  purity_cutoff:
     type: number
     min: 0
     max: 1.0

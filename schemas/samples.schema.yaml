@@ -10,11 +10,11 @@ properties:
     description: "Unique sample name/identifier"
     type: string
     uniqueItems: true
-  TP53freq: 
+  exp_p: 
     type: number
     minimum: 0
     maximum: 1.0
-    description: "Experimental anchoring allele frequency for each sample"
+    description: "Experimental tumor purity estimation for each sample"
   file: 
     description: "Path for each samples bam file"
     type: string
