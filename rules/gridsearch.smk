@@ -9,4 +9,4 @@ rule gridsearch_fitting:
         outdir=OUT_DIR,
         project="{project}"
     script:
-        "../scripts/ploidy_purity_search_standard_error.R"
+        "../scripts/ploidy_purity_search_standard_error_custom.R"

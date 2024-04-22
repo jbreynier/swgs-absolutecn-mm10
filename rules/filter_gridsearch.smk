@@ -12,5 +12,5 @@ rule gridsearch_filter:
         af_cutoff=config["af_cutoff"]
     threads: THREADS 
     script: 
-        "../scripts/gridsearch_results_filtering.R"
+        "../scripts/gridsearch_results_filtering_custom.R"
         
