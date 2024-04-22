@@ -201,7 +201,7 @@ print(ggplot(res,aes(x=ploidy,y=purity,fill=clonality))+geom_tile()+
                theme_bw())
 dev.off()
 
-write.table(res,snakemake@output[["csv"]],sep="\t",quote=F,row.names=FALSE)
+write.table(res,snakemake@output[["tsv"]],sep="\t",quote=F,row.names=FALSE)
 # write.table(res, paste0(results_path,
 #                         "clonality_results_custom/su2c_organoids_b0_Control_clonality.tsv"),
 #             sep="\t",quote=F,row.names=FALSE)

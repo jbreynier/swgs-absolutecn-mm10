@@ -142,7 +142,7 @@ foreach(i=unique(pruned_results$SAMPLE_ID)) %dopar% {
     
     # expTP53 <- round(dat[n,]$expected_TP53_AF, 2)
     # TP53 <- dat[n,]$TP53freq
-    exp_purity <- dat[n,]$exp_p
+    exp_p <- dat[n,]$exp_p
     
     #convert to abs
     
@@ -165,7 +165,7 @@ foreach(i=unique(pruned_results$SAMPLE_ID)) %dopar% {
     }
   plot(temp,doCalls=FALSE,showSD=TRUE,logTransform=FALSE,ylim=c(0,yrange),ylab="Absolute tumour CN",
          main=paste(i,
-                    " exp_p=", round(exp_purity,2),
+                    " exp_p=", round(exp_p,2),
                     " p=",round(purity,2),
                     " pl=",round(ploidy,2),
                     sep=""),cex.main=0.8)

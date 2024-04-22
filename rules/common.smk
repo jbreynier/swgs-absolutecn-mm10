@@ -58,7 +58,7 @@ OUT_DIR=config["out_dir"]
 OUT_DIR=os.path.join(OUT_DIR,"")
 
 #Load sample sheet and set index
-samplesheet = pd.read_table(config["samplesheet"],dtype={'PATIENT_ID': str,'SAMPLE_ID':str,'TP53freq':float}).set_index(["SAMPLE_ID"], drop=False)
+samplesheet = pd.read_table(config["samplesheet"],dtype={'PATIENT_ID': str,'SAMPLE_ID':str,'exp_p':float}).set_index(["SAMPLE_ID"], drop=False)
 validate(samplesheet, schema="../schemas/samples.schema.yaml")
 
 #### Check bin values ####
