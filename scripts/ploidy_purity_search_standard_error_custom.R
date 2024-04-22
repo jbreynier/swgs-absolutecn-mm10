@@ -2,7 +2,7 @@
 #traditional clonality error function. it is designed to be used in conjuction 
 #with TP53 allele frequency to determine precise purity and ploidy fit
 
-grab commandline arguments
+# grab commandline arguments
 args = commandArgs(trailingOnly=TRUE)
 rds.filename <- snakemake@input[[1]]
 bin <- as.numeric(snakemake@params[["bin"]])
